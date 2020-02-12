@@ -7,14 +7,15 @@ import { Blurhash } from "react-blurhash"
 const RestaurantItem = ({ restaurant }) => {
     const [image, setImage] = useState()
     useEffect(() => {
+        const loadedImage = new Image()
         if (restaurant.loadImage) {
             const loadImage = async () => {
-                const loadedImage = new Image()
                 loadedImage.onload = () => { setImage(loadedImage) }
                 loadedImage.src = restaurant.image
             }
             loadImage()
         } else setImage()
+        return () => loadedImage.onload = () => {}
     }, [restaurant.image, restaurant.loadImage])
 
     return (
