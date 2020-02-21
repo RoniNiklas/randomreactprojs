@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Alert from "react-bootstrap/Alert"
+import Spinner from "react-bootstrap/Spinner"
 import ItinerariesTab from "./Components/ItinerariesTab/ItinerariesTab"
 import InputForm from "./Components/InputForm/InputForm"
 import hslApiService from "./services/hslApi"
@@ -16,6 +17,7 @@ const EficodeApp = () => {
     const [location, setLocation] = useState()
     const [error, setError] = useState()
     const [key, setKey] = useState(0)
+    const [loading, setLoading] = useState(false)
 
     const handleItineraries = async (fetchedItineraries) => {
         if (fetchedItineraries.length > 0) {
@@ -26,6 +28,7 @@ const EficodeApp = () => {
             setItineraries()
             setError("Could not find a route from that location. Try a different one.")
         }
+        setLoading(false)
     }
 
     const fetchAndHandleItineraries = async (coordinates) => {
@@ -36,6 +39,7 @@ const EficodeApp = () => {
     const getItineraries = async (event) => {
         event.preventDefault()
         try {
+            setLoading(true)
             if (!location) {
                 navigator.geolocation.getCurrentPosition(fetchAndHandleItineraries, () => { setError("Could not use location data.") })
             } else {
@@ -44,6 +48,7 @@ const EficodeApp = () => {
             }
         } catch (error) {
             setItineraries()
+            setLoading(false)
             setError("Could not find a route from that location. Try a different one.")
         }
     }
@@ -52,6 +57,11 @@ const EficodeApp = () => {
         <div className="eficode-root">
             {error && <Alert variant="primary">{error}</Alert>}
             <InputForm setLocation={setLocation} getItineraries={getItineraries} />
+            {loading &&
+                <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                </Spinner>
+            }
             {itineraries && <ItinerariesTab itineraries={itineraries} setKey={setKey} tabKey={key} />}
         </div >
     )
