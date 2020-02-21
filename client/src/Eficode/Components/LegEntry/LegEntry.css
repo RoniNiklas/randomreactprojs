@@ -1,0 +1,11 @@
+.legEntry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.legEntry-card > .card-text {
+    margin: 0.5em;
+}
