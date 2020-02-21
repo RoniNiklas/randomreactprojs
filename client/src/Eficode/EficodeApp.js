@@ -41,7 +41,10 @@ const EficodeApp = () => {
         try {
             setLoading(true)
             if (!location) {
-                navigator.geolocation.getCurrentPosition(fetchAndHandleItineraries, () => { setError("Could not use location data.") })
+                navigator.geolocation.getCurrentPosition(fetchAndHandleItineraries, () => { 
+                    setError("Could not use location data.")
+                    setLoading(false)
+                })
             } else {
                 const coordinates = await hslApiService.getLocationCoordinates(location)
                 fetchAndHandleItineraries(coordinates)
