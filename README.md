@@ -5,15 +5,16 @@ This app is available on [heroku](https://roninreactprojs.herokuapp.com/)
 ## Locally
 1. Clone this github repo onto a directory on your computer  
 git clone https://github.com/RoniNiklas/randomreactprojs.git  
-2. Install dependencies  
+2. Install dependencies with  
 yarn install 
-3. Start backend  
+3. Start the backend with  
 yarn start  
 4. The app is now available in your browser under localhost:5000  
 5. When developing, start the development server instead of the regular backend by going to client folder with  
 cd client  
 and then starting te development server with  
 yarn start  
+6. The app is then available in your browser under localhost:3000  
 
 ## Docker
 1. Pull the image from Docker Hub  
