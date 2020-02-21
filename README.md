@@ -7,7 +7,7 @@ This app is available on [heroku](https://roninreactprojs.herokuapp.com/)
   
 git clone https://github.com/RoniNiklas/randomreactprojs.git  
   
-2. Install dependencies with  
+2. Install dependencies in the directory with  
   
 yarn install 
   
