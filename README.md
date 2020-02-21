@@ -3,6 +3,7 @@
 This app is available on [heroku](https://roninreactprojs.herokuapp.com/)
 
 ## Locally
+ 
 1. Clone this github repo onto a directory on your computer  
   
 git clone https://github.com/RoniNiklas/randomreactprojs.git  
@@ -27,6 +28,7 @@ yarn start
 6. The app is then available in your browser under localhost:3000  
 
 ## Docker
+  
 1. Pull the image from [Docker Hub](https://hub.docker.com/r/roniniklas/reactprojs) with  
   
 docker pull roniniklas/reactprojs  
@@ -35,4 +37,4 @@ docker pull roniniklas/reactprojs
   
 docker run -p 5000:5000 -d roniniklas/reactprojs   
   
-3. The application is now available in <docker ip>:5000  
+3. The application is now available in in port 5000 under the IP that your docker uses  
