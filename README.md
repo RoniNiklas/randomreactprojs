@@ -16,7 +16,7 @@ yarn install
 yarn start  
   
 4. The app is now available in your browser under localhost:5000  
-5. When developing, start the development server instead of the regular backend by going to client folder with  
+5. When developing, start the development server instead of the regular backend by going to the frontend folder with  
   
 cd client  
   
@@ -33,6 +33,6 @@ docker pull roniniklas/reactprojs
   
 2. Start the container  
   
-docker run -p 5000:5000 roniniklas/reactprojs   
+docker run -p 5000:5000 -d roniniklas/reactprojs   
   
 3. The application is now available in port 5000 using your docker IP  
