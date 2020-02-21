@@ -27,7 +27,7 @@ yarn start
 6. The app is then available in your browser under localhost:3000  
 
 ## Docker
-1. Pull the image from Docker Hub  
+1. Pull the image from (Docker Hub)[https://hub.docker.com/r/roniniklas/reactprojs] 
   
 docker pull roniniklas/reactprojs  
   
