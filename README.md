@@ -7,8 +7,6 @@ This app is available on [heroku](https://roninreactprojs.herokuapp.com/)
 git clone https://github.com/RoniNiklas/randomreactprojs.git  
 2. Install dependencies  
 yarn install 
-or 
-npm install
 3. Start backend  
 yarn start  
 4. The app is now available in your browser under localhost:5000  
