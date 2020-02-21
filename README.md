@@ -2,8 +2,8 @@
 
 A compilation of small node + express + react projects.  
 Includes:   
-- a restaurant lister and list sorter done as a part of the application process for Wolt's summer internship.  
-- a public transport route finding app that shows you between one and three ways of getting to Eficode's offices in Helsinki done as a part of the application process for Eficode's summer internship.  
+- A restaurant lister and list sorter done as a part of the application process for Wolt's summer internship.  
+- A public transport route finding app that shows you between one and three ways of getting to Eficode's offices in Helsinki. Done as a part of the application process for Eficode's summer internship.  
 
 # How to use
 
