@@ -2,13 +2,8 @@
 
 A compilation of small node + express + react projects.  
 Includes:   
-<<<<<<< HEAD
 - A restaurant lister and list sorter done as a part of the application process for Wolt's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/woltapp).  
 - A public transport route finding app that shows you between one and three ways of getting to Eficode's offices in Helsinki. Done as a part of the application process for Eficode's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/eficode).  
-=======
-- A restaurant lister and list sorter done as a part of the application process for Wolt's summer internship.  
-- A public transport route finding app that shows you between one and three ways of getting to the Eficode's offices in Helsinki. Done as a part of the application process for Eficode's summer internship.  
->>>>>>> 40edda5... eficode frontend polish, testless
 
 # How to use
 
