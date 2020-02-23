@@ -1,0 +1,12 @@
+.component-listing {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:1em;
+}
+.front-root {
+    margin:1em;
+}
+.front-root > p {
+    text-align:center;
+}
