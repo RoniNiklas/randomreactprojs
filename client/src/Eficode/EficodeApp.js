@@ -60,11 +60,7 @@ const EficodeApp = () => {
         <div className="eficode-root">
             {error && <Alert variant="primary">{error}</Alert>}
             <InputForm setLocation={setLocation} getItineraries={getItineraries} />
-            {loading &&
-                <Spinner animation="border" role="status">
-                    <span className="sr-only">Loading...</span>
-                </Spinner>
-            }
+            {loading && <Spinner animation="border" role="status" />}
             {itineraries && <ItinerariesTab itineraries={itineraries} setKey={setKey} tabKey={key} />}
         </div >
     )

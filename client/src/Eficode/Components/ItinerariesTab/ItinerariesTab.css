@@ -1,0 +1,15 @@
+.tab-content {
+    max-width:99vw;
+}
+.tab-pane {
+    max-width: 99vw;
+
+}
+.itineraryTab {
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap: wrap !important;
+}
+.nav-tabs {
+    max-width: 99vw;
+}

@@ -2,14 +2,10 @@ import React from "react"
 import Tabs from "react-bootstrap/Tabs"
 import Tab from "react-bootstrap/Tab"
 import ItineraryEntry from "../ItineraryEntry/ItineraryEntry"
-
-import timeUtil from "../../utils/time"
+import itinerariesUtil from "../../utils/itineraries"
+import "./ItinerariesTab.css"
 
 const ItinerariesTab = ({ tabKey, setKey, itineraries }) => {
-
-    const parseTitle = (index, itinerary) => {
-        return "Option " + (index + 1) + " (" + timeUtil.parseTime(itinerary.legs[0].startTime) + "-" + timeUtil.parseTime(itinerary.legs[itinerary.legs.length - 1].endTime) + ")"
-    }
 
     return (
         <>
@@ -17,11 +13,11 @@ const ItinerariesTab = ({ tabKey, setKey, itineraries }) => {
                 activeKey={tabKey}
                 onSelect={k => setKey(k)}
                 mountOnEnter={true}
-                unmountOnExit={true}
+                unmountOnExit={true}         
             >
                 {itineraries.map((itinerary, index) => {
                     return (
-                        <Tab key={index} eventKey={index} title={parseTitle(index, itinerary)}>
+                        <Tab className="itineraryTab" key={index} eventKey={index} title={itinerariesUtil.parseTitle(index, itinerary)}>
                             <ItineraryEntry key={index} index={index} itinerary={itinerary} />
                         </Tab>
                     )

@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import WoltApp from "./Woltapp/WoltApp"
+import WoltApp from "./Wolt/WoltApp"
 import Menu from "./components/Menu/Menu"
 import Front from "./components/Front/Front"
 import { Route } from "react-router-dom"
@@ -11,7 +11,7 @@ function App() {
     <>
       < Menu />
       <Route exact path="/" render={() => <Front />} />
-      <Route exact path="/woltapp" render={() => <WoltApp />} />
+      <Route exact path="/wolt" render={() => <WoltApp />} />
       <Route exact path="/eficode" render={() => <EficodeApp />} />
     </>
   )

@@ -9,3 +9,19 @@
 .legEntry-card > .card-text {
     margin: 0.5em;
 }
+
+.legEntry-card > .card-header {
+    background-color:white;
+}
+
+.legEntry-card >{
+    width:360px;
+    max-width:90vw;
+    height:420px;
+    max-height: 420px;
+    border-color: gray;
+}
+
+.legEntry {
+    margin: 0.5em;
+}

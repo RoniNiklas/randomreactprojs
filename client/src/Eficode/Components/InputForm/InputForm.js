@@ -18,7 +18,7 @@ const InputForm = ({ setLocation, getItineraries }) => {
                     onChange={(event) => setLocation(event.target.value)}
                 />
                 <Form.Text className="text-muted">
-                    Suitable inputs include addresses and unique places like Tuomiokirkko. If this is left empty, the app will try to use your location data instead.
+                    Suitable inputs include addresses, place names, and unique places like Tuomiokirkko. If this is left empty, the app will try to use your location data instead.
                  </Form.Text>
             </Form.Group>
         </Form>

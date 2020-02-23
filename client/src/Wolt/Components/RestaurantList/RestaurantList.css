@@ -1,0 +1,19 @@
+.btn {
+    margin: 30px;
+}
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2em;
+}
+
+.woltapp-root > h2 {
+    text-align:center;
+}
+
+.buttonRow {
+    display:flex;
+    flex-direction: row;
+}

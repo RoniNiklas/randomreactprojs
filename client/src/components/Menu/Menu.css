@@ -1,0 +1,7 @@
+.menu {
+    position: -webkit-sticky;
+    position:sticky;
+    top:0;
+    z-Index:2;
+    width:100%;
+}

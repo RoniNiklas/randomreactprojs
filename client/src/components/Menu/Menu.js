@@ -2,6 +2,7 @@ import React from "react"
 import Nav from 'react-bootstrap/Nav'
 import Navbar from "react-bootstrap/Navbar"
 import { Link } from "react-router-dom"
+import "./Menu.css"
 
 const Menu = () => {
     return (
@@ -10,7 +11,7 @@ const Menu = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link as={Link} href='#' to='/woltapp'>
+                    <Nav.Link as={Link} href='#' to='/wolt'>
                         Restaurant Lister
                     </Nav.Link>
                     <Nav.Link as={Link} href='#' to='/eficode'>
