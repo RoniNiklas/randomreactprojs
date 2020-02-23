@@ -2,8 +2,8 @@
 
 A compilation of small node + express + react projects.  
 Includes:   
-- A restaurant lister and list sorter done as a part of the application process for Wolt's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/woltapp).  
-- A public transport route finding app that shows you between one and three ways of getting to Eficode's offices in Helsinki. Done as a part of the application process for Eficode's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/eficode).  
+- A restaurant lister and list sorter done as a part of the application process for Wolt's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/wolt).  
+- A public transport route finding app that shows you between one and three ways of getting to the Eficode's offices in Helsinki. Done as a part of the application process for Eficode's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/eficode).  
 
 # How to use
 
@@ -30,15 +30,15 @@ yarn start
   
 cd client  
   
-and then installing the dependencies with  
+6. and then installing the dependencies with  
   
 yarn install  
   
-and then starting the development server with  
+7. and then starting the development server with  
    
 yarn start  
   
-6. The app is then available in your browser under localhost:3000  
+8. The app is then available in your browser under localhost:3000  
 
 ## Docker
   
