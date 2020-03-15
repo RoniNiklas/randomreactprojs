@@ -51,3 +51,10 @@ docker pull roniniklas/reactprojs
 docker run -p 5000:5000 -d roniniklas/reactprojs   
   
 3. The application is now available in in port 5000 under the IP that your docker uses  
+
+## Attributions  
+  
+Uses sounds from external sources:   
+Whistle by 16GStepankovaS   
+https://freesound.org/people/16GStepankovaS/sounds/499386/   
+Licensed with CC0 https://creativecommons.org/publicdomain/zero/1.0/  

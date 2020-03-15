@@ -1,0 +1,6 @@
+.mutebutton {
+    width: 50px;
+    background:transparent;
+    border:none;
+    align-self: flex-end;
+}

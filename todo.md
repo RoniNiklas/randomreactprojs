@@ -1,3 +1,4 @@
-## Eficode
-- Single map instead of per leg?
-4. Tests  
+## Fitnessapp    
+1. Give timer a preparation period of like 5 seconds before it starts?   
+2. Decide whether or not the user should be allowed to alter the timers' values while it's running (i.e. put a couple more sets, or increase rest time).    
+    - Currently you can alter it, but not with presets.

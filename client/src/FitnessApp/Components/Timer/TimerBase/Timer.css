@@ -1,0 +1,27 @@
+.timer-wrapper {
+    width: 480px;
+    max-width: 100vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-editing {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.timer-editing-item {
+    margin: 1em;
+}
+
+.showform-button {
+    
+    margin: auto;
+    background-color: transparent;
+    outline:none;
+    color:black; 
+    border:none;
+}

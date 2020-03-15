@@ -47,9 +47,11 @@ const EficodeApp = () => {
                 })
             } else {
                 const coordinates = await hslApiService.getLocationCoordinates(location)
+                console.log(coordinates)
                 fetchAndHandleItineraries(coordinates)
             }
         } catch (error) {
+            console.log(error)
             setItineraries()
             setLoading(false)
             setError("Could not find a route from that location. Try a different one.")

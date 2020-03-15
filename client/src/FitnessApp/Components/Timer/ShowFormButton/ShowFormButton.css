@@ -1,0 +1,8 @@
+.showform-wrapper {
+    margin: 1em;
+    display: flex;
+}
+
+.showform-button {
+    margin: auto;
+}
