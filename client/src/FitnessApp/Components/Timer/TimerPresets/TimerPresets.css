@@ -1,0 +1,7 @@
+.preset-dropdown {
+    text-align: center;
+}
+
+.preset-dropdown > button {
+    margin: 0;
+}

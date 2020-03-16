@@ -1,17 +1,13 @@
 import React from "react"
-import Button from "react-bootstrap/Button"
-import { Link, Route } from "react-router-dom"
-import Timer from "./Components/Timer/Timer"
+import { Route } from "react-router-dom"
+import Timer from "./Components/Timer/TimerBase/Timer"
+import Menu from "./Components/Menu/Menu"
 
 const FitnessApp = () => {
     return (
         <>
-            <Link to="/fitness/timer">
-                <Button>
-                    Open timer
-                </Button>
-            </Link>
-            <Route exact path="/fitness/timer" render={() =>  <Timer />} />
+            <Menu />
+            <Route exact path="/fitness/timer" render={() => <Timer />} />
         </>
     )
 }

@@ -14,7 +14,7 @@ const Menu = ({ components }) => {
                     {components &&
                         components.map(component => {
                             return (
-                                < Nav.Link as={Link} href='#' to={component.path}>
+                                <Nav.Link as={Link} key={component.id} href='#' to={component.path}>
                                     {component.name}
                                 </Nav.Link>
                             )

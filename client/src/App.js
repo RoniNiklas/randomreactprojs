@@ -27,7 +27,7 @@ function App() {
     {
       id: 3,
       name: "Fitness App",
-      description: "A compilation of helpful tools to help you in physical training. Done as a part of the university course 'Fullstack web sovellus harjoitustyö'. WIP",
+      description: "A compilation of helpful tools to help you in physical training. Currently includes a timer. Done as a part of the university course 'Fullstack web sovellus harjoitustyö'. WIP",
       path: "/fitness"
     }
   ]
