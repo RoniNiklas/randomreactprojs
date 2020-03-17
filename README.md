@@ -56,6 +56,6 @@ docker run -p 5000:5000 -d roniniklas/reactprojs
 ## Attributions  
   
 Uses the following items from external sources:   
-Whistle by 16GStepankovaS   
+*Whistle* by 16GStepankovaS   
 Available: https://freesound.org/people/16GStepankovaS/sounds/499386/   
 Licensed with: CC0 https://creativecommons.org/publicdomain/zero/1.0/  
