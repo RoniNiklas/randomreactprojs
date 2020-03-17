@@ -12,7 +12,7 @@ const TimerForm = ({ currentlyResting, timerActive, sets, workTime, restTime, se
                     placeholder="# of sets"
                     value={sets}
                     onChange={(event) => {
-                        if (/^\d+$/.test(event.target.value)) {
+                        if (/^\d+$/.test(event.target.value) || !event.target.value) {
                             setSets(event.target.value)
                             setSetsLeft(event.target.value)
                             localStorage.setItem("sets", event.target.value)
@@ -20,7 +20,7 @@ const TimerForm = ({ currentlyResting, timerActive, sets, workTime, restTime, se
                     }} />
                 <Form.Text className="text-muted">
                     The number of sets you want to do.
-                    </Form.Text>
+                </Form.Text>
             </Form.Group>
             <Form.Label>Work Time</Form.Label>
             <Form.Group controlId="form-worktime">
@@ -29,7 +29,8 @@ const TimerForm = ({ currentlyResting, timerActive, sets, workTime, restTime, se
                     placeholder="Amount of work time per set"
                     value={workTime}
                     onChange={(event) => {
-                        if (/^\d+$/.test(event.target.value)) {
+                        event.target.value = event.target.value.replace(/,/g, '.')
+                        if (/^[0-9]*\.?[0-9]*$/.test(event.target.value) || !event.target.value) {
                             setWorkTime(event.target.value)
                             !currentlyResting && setTimeLeft(event.target.value)
                             localStorage.setItem('workTime', event.target.value)
@@ -46,7 +47,8 @@ const TimerForm = ({ currentlyResting, timerActive, sets, workTime, restTime, se
                     placeholder="Rest time per set"
                     value={restTime}
                     onChange={(event) => {
-                        if (/^\d+$/.test(event.target.value)) {
+                        event.target.value = event.target.value.replace(/,/g, '.')
+                        if (/^[0-9]*\.?[0-9]*$/.test(event.target.value) || !event.target.value) {
                             setRestTime(event.target.value)
                             currentlyResting && setTimeLeft(event.target.value)
                             localStorage.setItem('restTime', event.target.value)
