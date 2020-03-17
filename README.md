@@ -4,7 +4,7 @@ A compilation of small node + express + react projects.
 Includes:   
 - A restaurant lister and list sorter done as a part of the application process for Wolt's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/wolt).  
 - A public transport route finding app that shows you between one and three ways of getting to the Eficode offices in Helsinki. Done as a part of the application process for Eficode's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/eficode).  
-- A compilation of helpful tools to help you in physical training. Currently includes a timer and a weight calculator. Done as a part of the university course 'Fullstack web sovellus harjoitustyö'. WIP   
+- A compilation of helpful tools to help you in physical training. Currently includes a timer and a weight calculator. Done as a part of the university course 'Fullstack web sovellus harjoitustyö'. **WIP**      
 
 # How to use
 
@@ -55,7 +55,7 @@ docker run -p 5000:5000 -d roniniklas/reactprojs
 
 ## Attributions  
   
-Uses sounds from external sources:   
+Uses the following items from external sources:   
 Whistle by 16GStepankovaS   
-https://freesound.org/people/16GStepankovaS/sounds/499386/   
-Licensed with CC0 https://creativecommons.org/publicdomain/zero/1.0/  
+Available: https://freesound.org/people/16GStepankovaS/sounds/499386/   
+Licensed with: CC0 https://creativecommons.org/publicdomain/zero/1.0/  
