@@ -15,7 +15,7 @@ const TimerForm = ({ currentlyResting, timerActive, sets, workTime, restTime, se
                         if (/^\d+$/.test(event.target.value)) {
                             setSets(event.target.value)
                             setSetsLeft(event.target.value)
-                            localStorage.setItem('sets', sets)
+                            localStorage.setItem("sets", event.target.value)
                         }
                     }} />
                 <Form.Text className="text-muted">
@@ -32,7 +32,7 @@ const TimerForm = ({ currentlyResting, timerActive, sets, workTime, restTime, se
                         if (/^\d+$/.test(event.target.value)) {
                             setWorkTime(event.target.value)
                             !currentlyResting && setTimeLeft(event.target.value)
-                            localStorage.setItem('workTime', workTime)
+                            localStorage.setItem('workTime', event.target.value)
                         }
                     }} />
                 <Form.Text className="text-muted">
@@ -49,7 +49,7 @@ const TimerForm = ({ currentlyResting, timerActive, sets, workTime, restTime, se
                         if (/^\d+$/.test(event.target.value)) {
                             setRestTime(event.target.value)
                             currentlyResting && setTimeLeft(event.target.value)
-                            localStorage.setItem('restTime', restTime)
+                            localStorage.setItem('restTime', event.target.value)
                         }
                     }} />
                 <Form.Text className="text-muted">

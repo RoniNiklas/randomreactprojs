@@ -9,11 +9,11 @@ import ShowFormButton from "../ShowFormButton/ShowFormButton"
 import "./Timer.css"
 
 const Timer = () => {
-    const [sets, setSets] = useState(localStorage.getItem('sets') || 3)
-    const [setsLeft, setSetsLeft] = useState(localStorage.getItem('sets') || 3)
-    const [workTime, setWorkTime] = useState(localStorage.getItem('workTime') || 5)
-    const [restTime, setRestTime] = useState(localStorage.getItem('restTime') || 3)
-    const [timeLeft, setTimeLeft] = useState(localStorage.getItem('workTime') || 5)
+    const [sets, setSets] = useState(localStorage.getItem('sets') || 8)
+    const [setsLeft, setSetsLeft] = useState(localStorage.getItem('sets') || 8)
+    const [workTime, setWorkTime] = useState(localStorage.getItem('workTime') || 20)
+    const [restTime, setRestTime] = useState(localStorage.getItem('restTime') || 10)
+    const [timeLeft, setTimeLeft] = useState(localStorage.getItem('workTime') || 20)
     const [currentlyResting, setCurrentlyResting] = useState(false)
     const [timerIsActive, setTimerIsActive] = useState(false)
     const [showForm, setShowForm] = useState(false)
@@ -26,9 +26,9 @@ const Timer = () => {
             timerRefIsActive && setTimeLeft(timeLeft - 1)
         }
         if (timerIsActive) {
-            if (timeLeft > 0) {
+            if (timeLeft > 0 && setsLeft > 0) {
                 timeoutHandle.current = setTimeout(() => countDown(activeRef.current), 1000)
-            } else if (setsLeft > 0) {
+            } else if (setsLeft > 1) {
                 soundService.playWhistle()
                 currentlyResting && setTimeout(() => soundService.playWhistle(), 500)
                 currentlyResting && setSetsLeft(setsLeft - 1)
@@ -37,10 +37,12 @@ const Timer = () => {
                     : setTimeLeft(restTime)
                 setCurrentlyResting(!currentlyResting)
             } else {
+                setTimerIsActive(false)
+                setTimeLeft(0)
+                setSetsLeft(0)
                 soundService.playWhistle()
                 setTimeout(() => soundService.playWhistle(), 750)
                 setTimeout(() => soundService.playWhistle(), 1500)
-                setTimerIsActive(false)
             }
         }
         return () => {
