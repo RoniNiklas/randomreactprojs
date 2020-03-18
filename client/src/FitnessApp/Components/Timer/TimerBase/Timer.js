@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
-import Button from "react-bootstrap/Button"
 import soundService from "../../../services/sound"
 import TimerForm from "../TimerForm/TimerForm"
 import TimerInfo from "../TimerInfo/TimerInfo"
-import TimerPresets from "../TimerPresets/TimerPresets"
 import MuteButton from "../MuteButton/MuteButton"
 import ShowFormButton from "../ShowFormButton/ShowFormButton"
+import ButtonGroup from "../ButtonGroup/ButtonGroup"
 import "./Timer.css"
 
 const Timer = () => {
@@ -50,35 +49,13 @@ const Timer = () => {
         }
     }, [timeLeft, timerIsActive, sets, setsLeft, currentlyResting, restTime, workTime])
 
-    const activateTimer = () => {
-        if (timeLeft === 0 && setsLeft === 0) {
-            setTimeLeft(workTime)
-            setSetsLeft(sets)
-        }
-        setTimerIsActive(!timerIsActive)
-    }
-
     return (
         <div className="timer-wrapper">
             <MuteButton />
             <TimerInfo setsLeft={setsLeft} timeLeft={timeLeft} currentlyResting={currentlyResting} />
-            <Button className="timerform-button" onClick={activateTimer}>
-                {timerIsActive ? "Pause timer" : "Start Timer"}
-            </Button>
+            <ButtonGroup timerIsActive={timerIsActive} setTimeLeft={setTimeLeft} setWorkTime={setWorkTime} setSets={setSets} setSetsLeft={setSetsLeft} setRestTime={setRestTime} setTimerIsActive={setTimerIsActive} timeLeft={timeLeft} setsLeft={setsLeft} workTime={workTime} sets={sets} />
             <ShowFormButton setShowForm={setShowForm} showForm={showForm} />
-            {
-                showForm &&
-                <div className="timer-editing">
-                    <div className="timer-editing-item">
-                        <h5> Use a preset: </h5>
-                        <TimerPresets timerActive={timerIsActive} setTimeLeft={setTimeLeft} setWorkTime={setWorkTime} setSets={setSets} setSetsLeft={setSetsLeft} setRestTime={setRestTime} />
-                    </div>
-                    <div className="timer-editing-item">
-                        <h5> Or select the values yourself: </h5>
-                        <TimerForm currentlyResting={currentlyResting} timerActive={timerIsActive} sets={sets} workTime={workTime} restTime={restTime} setTimeLeft={setTimeLeft} setWorkTime={setWorkTime} setSets={setSets} setSetsLeft={setSetsLeft} setRestTime={setRestTime} />
-                    </div>
-                </div>
-            }
+            {showForm && <TimerForm currentlyResting={currentlyResting} timerIsActive={timerIsActive} sets={sets} workTime={workTime} restTime={restTime} setTimeLeft={setTimeLeft} setWorkTime={setWorkTime} setSets={setSets} setSetsLeft={setSetsLeft} setRestTime={setRestTime} />}
         </div>
     )
 }

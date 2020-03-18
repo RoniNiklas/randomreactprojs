@@ -8,17 +8,15 @@ const Menu = () => {
         <div className="menu-wrapper">
             <Link to={window.location.pathname === "/fitness/timer" ? "/fitness" : "/fitness/timer"}>
                 <Button>
-                    {window.location.pathname === "/fitness/timer" ? "Close Timer" : "Open timer"}
+                    {window.location.pathname === "/fitness/timer" ? "Close Timer" : "Open Timer"}
                 </Button>
             </Link>
-            <Link to={window.location.pathname === "/fitness/calculator" ? "/fitness" : "/fitness/calculator"}>
+            <Link to={window.location.pathname === "/fitness/weight" ? "/fitness" : "/fitness/weight"}>
                 <Button>
-                    {window.location.pathname === "/fitness/calculator" ? "Close Calculator" : "Open Calculator"}
+                    {window.location.pathname === "/fitness/weight" ? "Close Training Weight Calculator" : "Open Training Weight Calculator"}
                 </Button>
             </Link>
-            
         </div>
-
     )
 }
 

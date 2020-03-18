@@ -9,7 +9,7 @@ const ShowFormButton = ({ showForm, setShowForm }) => {
             <button
                 className='showform-button'
                 onClick={() => setShowForm(!showForm)}>
-                {showForm ? 'Hide' : 'Set Timer Values'}
+                {showForm ? 'Hide' : 'Manage Timer Values'}
                 {showForm ? <ExpandLess /> : <ExpandMore />}
             </button>
         </div>

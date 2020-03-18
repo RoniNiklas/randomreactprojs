@@ -27,4 +27,5 @@ const playWhistle = () => {
     snd.volume = 0.1
     snd.play()
 }
+
 export default { playBeep, playWhistle, setMuted, getMuted }

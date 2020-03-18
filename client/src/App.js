@@ -31,6 +31,7 @@ function App() {
       path: "/fitness"
     }
   ]
+
   return (
     <>
       <Menu components={components} />
@@ -38,7 +39,6 @@ function App() {
       <Route exact path="/wolt" render={() => <WoltApp />} />
       <Route exact path="/eficode" render={() => <EficodeApp />} />
       <Route path="/fitness" render={() => <FitnessApp />} />
-
     </>
   )
 }

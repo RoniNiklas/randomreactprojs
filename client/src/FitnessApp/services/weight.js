@@ -1,6 +1,6 @@
 
 const pound = 0.45359237 // pound in kilos
-const kg = 2.20462262
+const kg = 2.20462262 // kilo in pounds
 
 const lbToKgConversion = (weight) => {
     return weight * pound
@@ -11,8 +11,8 @@ const kgToLbConversion = (weight) => {
 }
 
 const rounded = (weight) => {
-    return Number(Math.round(weight+"e1")+"e-1");
-  }
-  
+    return Number(Math.round(weight + "e1") + "e-1");
+}
+
 
 export default { lbToKgConversion, kgToLbConversion, rounded }
