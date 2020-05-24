@@ -22,17 +22,6 @@ const PlayButton = () => {
             console.log("UTTERANCE ERROR", error)
         }
 
-        content.ref.current.onselect = (event) => {
-            console.log("EVENT", event)
-            console.log("TARGET", event.target)
-            console.log("TOP", event.target.offsetTop)
-            console.log("CLIENT HEIGHT", event.target.clientHeight)
-            console.log("SCROLL HEIGHT", event.target.scrollHeight)
-            console.log("BORDER TOP WIDTH", event.target.borderTopWidth)
-            console.log("BORDER RIGHT WIDTH", event.target.borderRightWidth)
-            console.log("BOUNDING", event.target.getBoundingClientRect())
-        }
-
         speech.utterance.onboundary = (event) => {
             const textArea = content.ref.current
             textArea.focus()

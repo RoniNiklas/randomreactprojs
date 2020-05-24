@@ -1,12 +1,10 @@
 .dyslexia-wrapper {
     width: 100vw;
     background:wheat;
-    display:flex;
-    flex-direction: row;
-    align-items: flex-start;
 }
 
 .dyslexia-toolBar {
+    z-index: 2;
     background:tomato;
     min-width: 15vw;
     margin: 1vw 1vw;
@@ -14,15 +12,41 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position:fixed;
+    right:0;
 }
 
 .dyslexia-textArea {
     width: 80vw;
-    height: 90vh;
-    margin: 1vw 1vw;
-    padding: 1vw 1vw;
-    overflow: auto;
+    min-height: 100vh;
+    padding: 5vw;
     word-wrap:break-word;
+    position: fixed;
+    padding-top: 10vh;
+    overflow:visible;
+}
+
+.dyslexia-bar-overlay {
+    width: 100%;
+    height: 100%;
+}
+
+.dyslexia-bar {
+    pointer-events: none;
+    transition-property: height;
+    transition-duration: 333ms;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background:rgba(0,0,0,0.5);
+}
+
+.relative {
+    position: relative
+}
+
+.m-1vw {
+    margin: 1vw 1vw;
 }
 
 ::selection {
