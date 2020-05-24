@@ -1,10 +1,10 @@
 import React, { createContext, useReducer } from "react"
 
 const initialState = {
-    fontSize: 16,
-    lineHeight: 1,
-    letterSpacing: 1,
-    wordSpacing: 1,
+    fontSize: 18,
+    lineHeight: 2,
+    letterSpacing: 2,
+    wordSpacing: 2,
     fonts: ["Roboto", "Cursive"],
     background: "#ffefd5", //papayawhip
     color: "#000000" //black

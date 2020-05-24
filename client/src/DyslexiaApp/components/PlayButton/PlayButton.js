@@ -4,12 +4,12 @@ import { SpeechContext } from "../../contexts/speech"
 import { TextContext } from "../../contexts/text"
 
 const PlayButton = () => {
-    const { state: text } = useContext(TextContext)
+    const { state: content } = useContext(TextContext)
     const { state: speech, dispatch } = useContext(SpeechContext)
     const start = () => {
         console.log("PAUSED?", speechSynthesis.paused)
         speechSynthesis.cancel()
-        speech.utterance.text = text
+        speech.utterance.text = content.text
         speechSynthesis.speak(speech.utterance)
 
         speech.utterance.onend = () => {
@@ -19,11 +19,26 @@ const PlayButton = () => {
         }
 
         speech.utterance.onerror = (error) => {
-            console.log(error)
+            console.log("UTTERANCE ERROR", error)
+        }
+
+        content.ref.current.onselect = (event) => {
+            console.log("EVENT", event)
+            console.log("TARGET", event.target)
+            console.log("TOP", event.target.offsetTop)
+            console.log("CLIENT HEIGHT", event.target.clientHeight)
+            console.log("SCROLL HEIGHT", event.target.scrollHeight)
+            console.log("BORDER TOP WIDTH", event.target.borderTopWidth)
+            console.log("BORDER RIGHT WIDTH", event.target.borderRightWidth)
+            console.log("BOUNDING", event.target.getBoundingClientRect())
         }
 
         speech.utterance.onboundary = (event) => {
-            //mahdollisesti siihen lukukohdan träkkäämiseen hyödyllinen
+            const textArea = content.ref.current
+            textArea.focus()
+            textArea.selectionStart = (event.charIndex)
+            textArea.selectionEnd = (event.charIndex + event.charLength)
+
         }
     }
 

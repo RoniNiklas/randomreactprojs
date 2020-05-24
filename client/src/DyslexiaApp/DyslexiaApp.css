@@ -24,3 +24,23 @@
     overflow: auto;
     word-wrap:break-word;
 }
+
+::selection {
+    background: peachpuff;
+}
+
+::-moz-selection {
+    background: peachpuff;
+}
+
+::-o-selection {
+    background: peachpuff;
+}
+
+::-ms-selection {
+    background: peachpuff;
+}
+
+::-webkit-selection {
+    background: peachpuff;
+}
