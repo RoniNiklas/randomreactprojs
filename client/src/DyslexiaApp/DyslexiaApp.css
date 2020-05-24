@@ -1,0 +1,26 @@
+.dyslexia-wrapper {
+    width: 100vw;
+    background:wheat;
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.dyslexia-toolBar {
+    background:tomato;
+    min-width: 15vw;
+    margin: 1vw 1vw;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dyslexia-textArea {
+    width: 80vw;
+    height: 90vh;
+    margin: 1vw 1vw;
+    padding: 1vw 1vw;
+    overflow: auto;
+    word-wrap:break-word;
+}

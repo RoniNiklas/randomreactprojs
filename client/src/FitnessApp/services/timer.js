@@ -29,6 +29,11 @@ const addPreset = (preset) => {
     localStorage.setItem("timerPresets", JSON.stringify([...getPresets(), preset]))
 }
 
+const addAndEchoPreset = (preset) => {
+    callback([...getPresets(), preset])
+    localStorage.setItem("timerPresets", JSON.stringify([...getPresets(), preset]))
+}
+
 const subscribeWith = (stateCallback) => {
     callback = stateCallback
 }
@@ -51,4 +56,4 @@ const reset = () => {
     echo(defaultPresets)
 }
 
-export default { getPresets, addPreset, newIndex, subscribeWith, unsubscribe, echo, reset }
+export default { getPresets, addPreset, addAndEchoPreset, newIndex, subscribeWith, unsubscribe, echo, reset }

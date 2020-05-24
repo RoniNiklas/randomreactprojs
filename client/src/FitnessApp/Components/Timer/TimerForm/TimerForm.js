@@ -18,8 +18,7 @@ const TimerForm = ({ currentlyResting, sets, timerIsActive, workTime, restTime, 
             restTime,
             sets
         }
-        timerService.addPreset(preset)
-        timerService.echo(timerService.getPresets())
+        timerService.addAndEchoPreset(preset)
     }
 
     return (
