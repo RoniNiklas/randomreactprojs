@@ -5,7 +5,7 @@ const initialState = {
     lineHeight: 2,
     letterSpacing: 2,
     wordSpacing: 2,
-    fonts: ["Roboto", "Cursive"],
+    fonts: ["Roboto", "Comic Sans MS"],
     background: "#ffefd5", //papayawhip
     color: "#000000" //black
 }

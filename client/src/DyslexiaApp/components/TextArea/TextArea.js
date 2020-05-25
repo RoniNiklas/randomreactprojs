@@ -7,10 +7,7 @@ import { TextContext } from "../../contexts/text"
 const TextArea = () => {
     const { state: style } = useContext(StyleContext)
     const { state: content, dispatch } = useContext(TextContext)
-    const [topTop, setTopTop] = useState(0)
-    const [topHeight, setTopHeight] = useState(0)
-    const [bottomTop, setBottomTop] = useState(0)
-    const [bottomHeight, setBottomHeight] = useState(0)
+    const [rows, setRows] = useState([])
     const overlay = useRef()
     const textArea = useRef()
     const topBar = useRef()
@@ -18,41 +15,52 @@ const TextArea = () => {
 
     useEffect(() => {
         dispatch({ type: "setRef", payload: textArea })
-
     }, [])
 
+    useEffect(() => {
+        const rows = content.text.match(/[^\r\n]+/g)
+        console.log("ROWS", rows)
+        setRows(rows)
+    }, [])
     const handleSelect = (event) => {
-        const coordinates = getCoordinates(event.target, event.target.selectionStart)
-        console.log(textArea.current.style)
-        setTopTop(textArea.current.style.top)
-        setTopHeight(coordinates.top)
-        const bottomOfText = coordinates.top + coordinates.height + style.fontSize + (style.lineHeight * style.fontSize) * 1.1
-        setBottomTop(bottomOfText)
-        console.log("overlay", overlay.current)
-        console.log("overlay style", overlay.current.style)
-        console.log("overlay bottom", overlay.current.style.bottom)
-        setBottomHeight(overlay.current.style.bottom - bottomOfText)
-        console.log(coordinates)
+        //textArea.current.scrollTop = 9000
+        //textArea.current.blur()
+        //textArea.current.focus()
     }
 
-
     return (
-        <div className="relative m-1vw">
-            <div ref={overlay} className="dyslexia-bar-overlay">
-                <div ref={topBar} className="dyslexia-bar" style={{ height: topHeight }} />
-                <div ref={bottomBar} className="dyslexia-bar" style={{ height: bottomHeight, top: bottomTop }} />
-            </div>
-
-            <textarea
-                ref={textArea}
-                id="text-area"
-                className="dyslexia-textArea"
-                type="text"
-                style={style}
-                value={content.text}
-                onChange={(event) => dispatch({ type: "setText", payload: event.target.value })}
-                onSelect={handleSelect}
-            />
+        <div className="wrapper">
+            {content.immersive
+                ?
+                <>
+                    <div ref={overlay} className="dyslexia-bar-overlay">
+                        <div ref={topBar} className="dyslexia-bar" style={{ height: window.innerHeight * 0.5 - style.fontSize }} />
+                        <div ref={bottomBar} className="dyslexia-bar" style={{ height: window.innerHeight * 0.5 - style.fontSize, top: window.innerHeight * 0.5 + style.fontSize }} />
+                    </div>
+                    <textarea
+                        ref={textArea}
+                        spellCheck="true"
+                        id="text-area"
+                        className="dyslexia-textArea"
+                        type="text"
+                        value={content.text}
+                        rows={3}
+                        style={{ ...style}}
+                        onChange={(event) => dispatch({ type: "setText", payload: event.target.value })}
+                        onSelect={handleSelect}
+                    />
+                </>
+                : <textarea
+                    ref={textArea}
+                    spellCheck="true"
+                    id="text-area"
+                    className="dyslexia-textArea"
+                    type="text"
+                    style={{ ...style, height: "80vh" }}
+                    value={content.text}
+                    onChange={(event) => dispatch({ type: "setText", payload: event.target.value })}
+                />
+            }
         </div>
     )
 }

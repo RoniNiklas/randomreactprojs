@@ -24,10 +24,10 @@ const PlayButton = () => {
 
         speech.utterance.onboundary = (event) => {
             const textArea = content.ref.current
-            textArea.focus()
+            textArea.blur()
             textArea.selectionStart = (event.charIndex)
             textArea.selectionEnd = (event.charIndex + event.charLength)
-
+            setTimeout(textArea.focus(), 250)
         }
     }
 

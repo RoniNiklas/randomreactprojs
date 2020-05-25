@@ -33,7 +33,8 @@ const initialState = {
     Dare frame thy fearful symmetry?
     
     - Tyger by William Blake
-    `
+    `,
+    immersive: false
 }
 
 const TextContext = createContext(initialState)
@@ -46,6 +47,9 @@ const reducer = (state, action) => {
         }
         case "setText": {
             return {...state, text: action.payload}
+        }
+        case "setImmersive": {
+            return {...state, immersive: action.payload}
         }
         default: throw new Error("Invalid action type in textcontext")
     }
