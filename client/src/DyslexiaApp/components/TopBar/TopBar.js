@@ -14,7 +14,7 @@ const TopBar = () => {
                 Speech-to-Text:
                 <InfoButton placement="bottom" infoText="Press 'Start Recording' and speak into your microphone. Your speech should be recorded into the text field below. Make sure to plug your microphone in before loading this page, and that the page has the rights to use your microphone. (Only works on certain moderns browsers)" />
                 <VoiceRecognitionButton />
-                <InfoButton placement="bottom" infoText="Insert the name of the language you intend to speak into this textbox and select a language from the dropdown. By default, it uses your browser language." />
+                <InfoButton placement="bottom" infoText="Select the name of the language you intend to speak in the following dropdown. By default, it uses your browser language. Use the native name of the language when filtering with the text input (i.e. Finnish is Suomi)." />
                 <RecognitionLanguageSelector />
             </>
         )

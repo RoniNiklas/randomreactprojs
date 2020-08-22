@@ -1,6 +1,8 @@
+/* https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
+
 input[type=range] {
     -webkit-appearance: none;
-    margin: 18px 0;
+    margin: 0;
     width: 100%;
   }
   input[type=range]:focus {

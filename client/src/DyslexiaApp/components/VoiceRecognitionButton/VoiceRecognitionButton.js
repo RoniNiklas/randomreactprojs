@@ -37,7 +37,7 @@ const VoiceRecognitionButton = () => {
     }
 
     return (
-        <button disabled={state.available} onClick={handleClick}>{state.recording ? "Stop Recording" : "Start Recording"}</button>
+        <button className="btn dyslexia-button" disabled={state.available} onClick={handleClick}>{state.recording ? "Stop Recording" : "Start Recording"}</button>
     )
 }
 

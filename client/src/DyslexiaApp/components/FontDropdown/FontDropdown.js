@@ -7,12 +7,16 @@ const FontDropdown = () => {
     const { state, dispatch } = useContext(StyleContext)
     return (
         <Dropdown
+            className="ml-2"
             onSelect={(eventKey) => {
                 dispatch({ type: "fontFamily", payload: eventKey })
             }}
             drop="left"
         >
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle 
+                className="dyslexia-button"
+                variant=""
+                id="dropdown-basic">
                 Change Font
             </Dropdown.Toggle>
             <Dropdown.Menu>

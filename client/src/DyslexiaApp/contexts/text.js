@@ -2,37 +2,15 @@ import React, { createContext, useReducer } from "react"
 
 const initialState = {
     ref: undefined,
-    text: `Tyger! Tyger! burning bright 
-    In the forests of the night,
-    What immortal hand or eye
-    Could frame thy fearful symmetry?
+    text: `It is something that many of us do instinctively, almost as muscle memory, several times a day. But rarely has it been as important as it has in the last six months.
     
-    In what distant deeps or skies
-    Burnt the fire of thine eyes?
-    On what wings dare he aspire?
-    What the hand, dare sieze the fire?
+Amidst the arsenal of weapons against coronavirus – masks, self-isolation and social distancing – one has been particularly easy to overlook: handwashing.
     
-    And what shoulder, & what art,
-    Could twist the sinews of thy heart?
-    And when thy heart began to beat,
-    What dread hand? & what dread feet?
+As the coronavirus emerged as a worldwide health emergency in February, health agencies scrambled to advise people how to protect themselves from the new virus. One suggestion – repeated day after day, on news bulletins, adverts and expert interviews – was to wash hands with soap, in warm water, for at least 20 seconds.
     
-    What the hammer? what the chain?
-    In what furnace was thy brain?
-    What the anvil? what dread grasp
-    Dare its deadly terrors clasp?
+The World Health Organization published a graphic – widely memed since – showing the correct way to wash hands: a how-to familiar to anyone who has ever worked in a bar or a restaurant.
     
-    When the stars threw down their spears,
-    And water'd heaven with their tears,
-    Did he smile his work to see?
-    Did he who made the Lamb make thee?
-    
-    Tyger! Tyger! burning bright
-    In the forests of the night,
-    What immortal hand or eye
-    Dare frame thy fearful symmetry?
-    
-    - Tyger by William Blake
+Six months on, the confused global picture over spikes and localised lockdowns – like the curfew recently imposed on Melbourne in Australia – has pushed the handwashing advice to the margins. Amid the growing backlash in some quarters against wearing masks and face coverings, this other silver bullet against coronavirus infection has been edged out of the spotlight. One Ethiopian observational study, still to be peer-reviewed, found less than 1% of more than 1,000 people visiting hospitals washed their hands in the correct way.  But has the advice changed? (Read about why some people don’t wash their hands.)
     `,
     immersive: false,
     recognition: window.webkitSpeechRecognition ? new window.webkitSpeechRecognition() : {},

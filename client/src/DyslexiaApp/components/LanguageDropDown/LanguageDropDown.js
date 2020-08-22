@@ -26,7 +26,11 @@ const LanguageDropDown = () => {
             }}
             drop="up"
         >
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle
+                className="dyslexia-button"
+                variant=""
+                id="dropdown-basic"
+            >
                 {state.chosen ? state.chosen.name : "Select a language"}
             </Dropdown.Toggle>
             <Dropdown.Menu>

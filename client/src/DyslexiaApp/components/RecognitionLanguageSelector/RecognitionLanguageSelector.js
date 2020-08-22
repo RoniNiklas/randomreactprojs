@@ -1,33 +1,23 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useContext } from "react"
 import Dropdown from "react-bootstrap/Dropdown"
 
 import languages from "../../../data/speechApiLanguages"
 
 import { TextContext } from "../../contexts/text"
 
-const RecognitionLanguageSelector = ({ autocompleteDelay = 100 }) => {
+const RecognitionLanguageSelector = () => {
     const [suggestions, setSuggestions] = useState([])
-    const [timeoutHandle, setTimeoutHandle] = useState()
     const [filter, setFilter] = useState("")
     const { state, dispatch } = useContext(TextContext)
 
-    useEffect(() => {
-        return () => clearTimeout(timeoutHandle)
-    })
-
     const handleChange = (input) => {
         setFilter(input)
-        clearTimeout(timeoutHandle)
-        setTimeoutHandle((setTimeout(async () => {
-            const filtered = languages.filter(suggestion => suggestion[0].toLowerCase().includes(input.toLowerCase()))
-            let copy = JSON.parse(JSON.stringify(filtered))
-            setSuggestions(copy)
-        }, autocompleteDelay)))
+        const filtered = languages.filter(suggestion => suggestion[0].toLowerCase().includes(input.toLowerCase()))
+        let copy = JSON.parse(JSON.stringify(filtered))
+        copy.length < 10 && setSuggestions(copy)
     }
 
     const handleSelect = (eventKey) => {
-        setFilter(eventKey)
-        setSuggestions([])
         dispatch({ type: "setLanguage", payload: eventKey })
     }
 
@@ -44,17 +34,18 @@ const RecognitionLanguageSelector = ({ autocompleteDelay = 100 }) => {
                 drop="down"
             >
                 <Dropdown.Toggle
-                    variant="success"
+                    className="dyslexia-button"
+                    variant=""
                     id="dropdown-basic"
                     disabled={state.recording}
                 >
-                    Select a language
+                    {state.recognition.lang ? "Chosen language: " + state.recognition.lang : "Select a language"}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     <input
                         value={filter}
                         type="text"
-                        placeholder={state.recording ? "Recording..." : "Change Language"}
+                        placeholder="Name of the language"
                         onChange={(event) => handleChange(event.target.value)}
                     />
                     {suggestions.map(suggestion => {

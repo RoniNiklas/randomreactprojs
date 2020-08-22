@@ -20,4 +20,3 @@ const Slider = ({ horizontal, label, min, max, step, value, callback }) => {
 }
 
 export default Slider
-//

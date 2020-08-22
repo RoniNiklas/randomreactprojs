@@ -14,6 +14,11 @@
     flex: 1 0 0;
 }
 
+.dyslexia-button {
+    border: 2px solid black;
+    background: rgb(255, 239, 213);
+}
+
 .immersive {
     overflow: hidden;
     padding: 0 5em;

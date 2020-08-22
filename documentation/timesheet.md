@@ -8,3 +8,4 @@
 23.5 => 4h => SideBar, textarea
 24.5 => 4h/8h => screen reader + puolet SideBarista
 25.5 => 7h/15h => varjostuksen kanssa tappelua
+22.8 => 5h/20h => immersion readerin poisto. CSS-korjaukset.

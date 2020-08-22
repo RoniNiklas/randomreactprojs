@@ -11,10 +11,10 @@ const ColorSelectors = () => {
     }
     return (
         <>
-            <h3 className="mt-4">Color Options:</h3>
+            <h3 className="mt-2">Color Options:</h3>
             <div className="flex flex-row align-items-center w-100 mt-2">
                 <label className="mr-auto">Background: </label>
-                <button className="color-input" onClick={() => handleChange({ target: { value: "#ffefd5" } }, "background")}>
+                <button className="color-input dyslexia-button" onClick={() => handleChange({ target: { value: "#ffefd5" } }, "background")}>
                     Default
                 </button>
                 <div className="relative color-input ml-2" style={{ backgroundColor: style.background }}>
@@ -31,7 +31,7 @@ const ColorSelectors = () => {
             </div>
             <div className="flex flex-row align-items-center w-100 mt-2">
                 <label className="mr-auto">Text: </label>
-                <button className="color-input" onClick={() => handleChange({ target: { value: "#000000" } }, "color")}>
+                <button className="color-input dyslexia-button" onClick={() => handleChange({ target: { value: "#000000" } }, "color")}>
                     Default
                 </button>
                 <div className="relative color-input ml-2" style={{ backgroundColor: style.color }}>
