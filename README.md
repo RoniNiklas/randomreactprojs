@@ -53,6 +53,7 @@ docker pull roniniklas/reactprojs
 docker run -p 5000:5000 -d roniniklas/reactprojs   
   
 3. The application is now available in in port 5000 under the IP that your docker uses  
+4. Note: This has not been tested since February 2020. The dockered version might be outdated or dysfunctional. Do report in how it compares to the Heroku version if you try it.  
 
 ## Attributions  
   
