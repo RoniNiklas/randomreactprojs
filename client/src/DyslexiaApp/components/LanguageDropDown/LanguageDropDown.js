@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import Dropdown from "react-bootstrap/Dropdown"
 
 import speechSynthesisService from "../../services/speechSynthesis"
@@ -16,7 +16,7 @@ const LanguageDropDown = () => {
         }
         initVoices()
         speechSynthesis.onvoiceschanged = initVoices
-    }, [])
+    }, [dispatch])
 
     return (
         <Dropdown

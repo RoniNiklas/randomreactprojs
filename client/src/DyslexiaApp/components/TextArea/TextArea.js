@@ -1,5 +1,5 @@
-import React, { useContext, useRef, useEffect, useState } from "react"
-import getCoordinates from "textarea-caret"
+import React, { useContext, useRef, useEffect } from "react"
+//import getCoordinates from "textarea-caret"
 
 import { StyleContext } from "../../contexts/textStyle"
 import { TextContext } from "../../contexts/text"
@@ -9,13 +9,12 @@ import "./TextArea.css"
 const TextArea = () => {
     const { state: style } = useContext(StyleContext)
     const { state: content, dispatch } = useContext(TextContext)
-    const [rows, setRows] = useState([])
     const overlay = useRef()
     const textArea = useRef()
 
     useEffect(() => {
         dispatch({ type: "setRef", payload: textArea })
-    }, [])
+    }, [dispatch])
 
     const handleSelect = (event) => {
         //textArea.current.scrollTop = 1000

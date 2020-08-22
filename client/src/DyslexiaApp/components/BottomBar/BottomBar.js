@@ -1,13 +1,32 @@
 import React from "react"
+
 import TextToSpeech from "../TextToSpeech/TextToSpeech"
-import ImmersiveToggle from "../ImmersiveToggle/ImmersiveToggle"
-/*<ImmersiveToggle />*/
+
 import "./BottomBar.css"
 
 const BottomBar = () => {
+
+    const renderForModernBrowser = () => {
+        return (
+            <TextToSpeech />
+        )
+    }
+
+    const renderForOldBrowser = () => {
+        return (
+            <>
+                <span>Text-to-Speech is only available on certain modern browsers. (See availability on <a href="https://caniuse.com/#feat=speech-synthesis">caniuse</a>)</span>
+            </>
+        )
+    }
+
     return (
         <div className="dyslexia-bottombar">
-            <TextToSpeech />
+            {
+                SpeechSynthesisUtterance
+                    ? renderForModernBrowser()
+                    : renderForOldBrowser()
+            }
         </div>
     )
 }

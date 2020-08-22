@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react"
 
-const initialUtterance = new SpeechSynthesisUtterance()
+const initialUtterance = SpeechSynthesisUtterance ? new SpeechSynthesisUtterance() : {}
 initialUtterance.volume = 0.25
 
 const initialState = {

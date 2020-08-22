@@ -12,7 +12,7 @@ const TopBar = () => {
         return (
             <>
                 Speech-to-Text:
-                <InfoButton placement="bottom" infoText="Press record and speak into a microphone. Your speech should be recorded into the text field below. (Only works on up-to-date versions of Chrome)" />
+                <InfoButton placement="bottom" infoText="Press 'Start Recording' and speak into your microphone. Your speech should be recorded into the text field below. Make sure to plug your microphone in before loading this page, and that the page has the rights to use your microphone. (Only works on certain moderns browsers)" />
                 <VoiceRecognitionButton />
                 <InfoButton placement="bottom" infoText="Insert the name of the language you intend to speak into this textbox and select a language from the dropdown. By default, it uses your browser language." />
                 <RecognitionLanguageSelector />
@@ -23,7 +23,8 @@ const TopBar = () => {
     const renderElseWhere = () => {
         return (
             <>
-                Speech-to-Text only works on an up-to-date version of Chrome.
+                <span> Speech-to-Text is only available on certain modern browsers. (See availability on <a href="https://caniuse.com/#search=SpeechRecognition%20API">caniuse</a>)</span>
+                <InfoButton placement="bottom" infoText="On an acceptable browser, you can record your voice and the browser will transcribe your speech to text in the textarea below." />
             </>
         )
     }
