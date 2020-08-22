@@ -17,8 +17,8 @@ const ColorSelectors = () => {
                 <button className="color-input" onClick={() => handleChange({ target: { value: "#ffefd5" } }, "background")}>
                     Default
                 </button>
-                <div class="relative" style={{ backgroundColor: style.background }}>
-                    <div class="text-overlay-centered">
+                <div className="relative color-input ml-2" style={{ backgroundColor: style.background }}>
+                    <div className="text-overlay-centered">
                         Custom
                     </div>
                     <input
@@ -34,8 +34,8 @@ const ColorSelectors = () => {
                 <button className="color-input" onClick={() => handleChange({ target: { value: "#000000" } }, "color")}>
                     Default
                 </button>
-                <div class="relative" style={{ backgroundColor: style.color }}>
-                    <div class="text-overlay-centered">
+                <div className="relative color-input ml-2" style={{ backgroundColor: style.color }}>
+                    <div className="text-overlay-centered">
                         Custom
                     </div>
                     <input

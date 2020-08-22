@@ -35,10 +35,11 @@ const initialState = {
     - Tyger by William Blake
     `,
     immersive: false,
-    recognition: new window.webkitSpeechRecognition(),
+    recognition: window.webkitSpeechRecognition ? new window.webkitSpeechRecognition() : {},
     recording: false,
     selectionStart: 0,
-    selectionEnd: 0
+    selectionEnd: 0,
+    available: !window.webkitSpeechRecognition
 }
 
 const TextContext = createContext(initialState)

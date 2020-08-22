@@ -37,7 +37,7 @@ const VoiceRecognitionButton = () => {
     }
 
     return (
-        <button onClick={handleClick}>{state.recording ? "Stop Recording" : "Start Recording"}</button>
+        <button disabled={state.available} onClick={handleClick}>{state.recording ? "Stop Recording" : "Start Recording"}</button>
     )
 }
 
