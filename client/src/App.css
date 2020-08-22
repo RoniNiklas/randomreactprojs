@@ -29,3 +29,8 @@
 label {
     margin-bottom: 0 !important;
 }
+
+.dropdown-menu > input {
+    width: 90%;
+    margin: 5%;
+}

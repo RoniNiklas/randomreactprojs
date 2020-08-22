@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
-import Form from "react-bootstrap/Form"
 import Dropdown from "react-bootstrap/Dropdown"
 
-
 import languages from "../../../data/speechApiLanguages"
-
-import AutoCompleteList from "../AutocompleteList/AutocompleteList"
 
 import { TextContext } from "../../contexts/text"
 
@@ -24,28 +20,19 @@ const RecognitionLanguageSelector = ({ autocompleteDelay = 100 }) => {
         clearTimeout(timeoutHandle)
         setTimeoutHandle((setTimeout(async () => {
             const filtered = languages.filter(suggestion => suggestion[0].toLowerCase().includes(input.toLowerCase()))
-            if (filtered.length === 1) {
-                let copy = JSON.parse(JSON.stringify(filtered))
-                copy = copy[0]
-                copy.shift()
-                setSuggestions(copy)
-            } else {
-                setSuggestions(languages)
-            }
-
+            let copy = JSON.parse(JSON.stringify(filtered))
+            setSuggestions(copy)
         }, autocompleteDelay)))
     }
 
     const handleSelect = (eventKey) => {
         setFilter(eventKey)
-        setSuggestions(languages)
+        setSuggestions([])
         dispatch({ type: "setLanguage", payload: eventKey })
     }
 
-    const renderLanguageName = (suggestion) => {
-        return suggestion[1] 
-            ? suggestion[0] + ", " + suggestion[1]
-            : suggestion[0];
+    const renderLanguageName = (langName, variant) => {
+        return langName + ", " + variant
     }
 
     return (
@@ -70,7 +57,11 @@ const RecognitionLanguageSelector = ({ autocompleteDelay = 100 }) => {
                         placeholder={state.recording ? "Recording..." : "Change Language"}
                         onChange={(event) => handleChange(event.target.value)}
                     />
-                    {suggestions.map(suggestion => <Dropdown.Item key={suggestion[0]} eventKey={suggestion[0]} href="#"> {renderLanguageName(suggestion)} </Dropdown.Item>)}
+                    {suggestions.map(suggestion => {
+                        const langName = suggestion[0]
+                        suggestion.shift()
+                        return suggestion.map(variant => <Dropdown.Item key={variant[0]} eventKey={variant[0]} href="#"> {renderLanguageName(langName, variant)}</Dropdown.Item>)
+                    })}
                 </Dropdown.Menu>
             </Dropdown>
         </>
