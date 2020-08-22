@@ -1,6 +1,8 @@
 import React from "react"
 import Form from "react-bootstrap/Form"
 
+import "./Slider.css"
+
 const Slider = ({ horizontal, label, min, max, step, value, callback }) => {
     return (
         <Form className={horizontal ? "flex flex-row align-items-center m-2" : "m-2"}>

@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useContext } from "react"
 import Form from "react-bootstrap/Form"
+import Dropdown from "react-bootstrap/Dropdown"
+
+
 import languages from "../../../data/speechApiLanguages"
 
 import AutoCompleteList from "../AutocompleteList/AutocompleteList"
@@ -27,32 +30,49 @@ const RecognitionLanguageSelector = ({ autocompleteDelay = 100 }) => {
                 copy.shift()
                 setSuggestions(copy)
             } else {
-                setSuggestions([])
+                setSuggestions(languages)
             }
 
         }, autocompleteDelay)))
     }
 
-    const handleSelect = (suggestion) => {
-        setFilter(suggestion[0])
-        setSuggestions([])
-        dispatch({ type: "setLanguage", payload: suggestion[0] })
+    const handleSelect = (eventKey) => {
+        setFilter(eventKey)
+        setSuggestions(languages)
+        dispatch({ type: "setLanguage", payload: eventKey })
+    }
+
+    const renderLanguageName = (suggestion) => {
+        return suggestion[1] 
+            ? suggestion[0] + ", " + suggestion[1]
+            : suggestion[0];
     }
 
     return (
         <>
-            <Form className="select-language-form" onSubmit={(event) => event.preventDefault()}>
-                <Form.Group>
-                    <Form.Control
-                        disabled={state.recording}
+            <Dropdown
+                onSelect={(eventKey) => {
+                    handleSelect(eventKey)
+                }}
+                drop="down"
+            >
+                <Dropdown.Toggle
+                    variant="success"
+                    id="dropdown-basic"
+                    disabled={state.recording}
+                >
+                    Select a language
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <input
                         value={filter}
                         type="text"
                         placeholder={state.recording ? "Recording..." : "Change Language"}
                         onChange={(event) => handleChange(event.target.value)}
                     />
-                    {suggestions.length > 0 && <AutoCompleteList suggestions={suggestions} handleClick={handleSelect} />}
-                </Form.Group>
-            </Form>
+                    {suggestions.map(suggestion => <Dropdown.Item key={suggestion[0]} eventKey={suggestion[0]} href="#"> {renderLanguageName(suggestion)} </Dropdown.Item>)}
+                </Dropdown.Menu>
+            </Dropdown>
         </>
     )
 }
