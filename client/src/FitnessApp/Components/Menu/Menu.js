@@ -6,14 +6,14 @@ import "./Menu.css"
 const Menu = () => {
     return (
         <div className="menu-wrapper">
-            <Link to={window.location.pathname === "/fitness/timer" ? "/fitness" : "/fitness/timer"}>
+            <Link to={"/fitness/timer"}>
                 <Button>
-                    {window.location.pathname === "/fitness/timer" ? "Close Timer" : "Open Timer"}
+                    Open Timer
                 </Button>
             </Link>
-            <Link to={window.location.pathname === "/fitness/weight" ? "/fitness" : "/fitness/weight"}>
+            <Link to={"/fitness/weight"}>
                 <Button>
-                    {window.location.pathname === "/fitness/weight" ? "Close Training Weight Calculator" : "Open Training Weight Calculator"}
+                    Open Training Weight Calculator
                 </Button>
             </Link>
         </div>

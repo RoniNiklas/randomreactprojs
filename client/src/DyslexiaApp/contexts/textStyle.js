@@ -6,6 +6,7 @@ const initialState = {
     letterSpacing: 2,
     wordSpacing: 2,
     fonts: ["Roboto", "Comic Sans MS"],
+    fontFamily: "Roboto",
     background: "#ffefd5", //papayawhip
     color: "#000000" //black
 }

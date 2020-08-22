@@ -1,6 +1,7 @@
-.btn {
-    margin: 30px;
+.btn-primary {
+    margin: 1rem 2rem;
 }
+
 .restaurant-list {
     display: flex;
     flex-wrap: wrap;

@@ -47,7 +47,7 @@ function App() {
     <>
       <Menu components={components} />
       <Route exact path="/" render={() => <Front components={components} />} />
-      {components.map(component => <Route key={component.id} exact path={component.path} render={() => component.component} />)}
+      {components.map(component => <Route key={component.id} path={component.path} render={() => component.component} />)}
     </>
   )
 }

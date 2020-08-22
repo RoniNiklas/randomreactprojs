@@ -1,10 +1,10 @@
 import React from "react"
 import Form from "react-bootstrap/Form"
 
-const Slider = ({ label, min, max, step, value, callback }) => {
+const Slider = ({ horizontal, label, min, max, step, value, callback }) => {
     return (
-        <Form>
-            <Form.Label>{label}</Form.Label>
+        <Form className={horizontal ? "flex flex-row align-items-center" : ""}>
+            <Form.Label className={horizontal ? "mb-0 mr-2" : ""}>{label}</Form.Label>
             <Form.Control
                 min={min}
                 max={max}
@@ -18,3 +18,4 @@ const Slider = ({ label, min, max, step, value, callback }) => {
 }
 
 export default Slider
+//

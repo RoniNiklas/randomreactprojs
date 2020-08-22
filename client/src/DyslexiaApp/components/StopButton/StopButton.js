@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import Stop from "@material-ui/icons/Stop"
 
 import { SpeechContext } from "../../contexts/speech"
 
@@ -10,8 +11,8 @@ const StopButton = () => {
     }
 
     return (
-        <button onClick={stop}>
-            Stop
+        <button className="icon-button" onClick={stop}>
+            <Stop />
         </button>
     )
 }

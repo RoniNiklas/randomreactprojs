@@ -1,0 +1,6 @@
+input[type="color"], .color-input {
+    width: 6rem;
+    height: 3rem;
+    cursor: pointer;
+    border: black 1px solid;
+}

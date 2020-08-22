@@ -24,7 +24,7 @@ const LanguageDropDown = () => {
                 const chosen = state.voices.find(voice => voice.name === eventKey)
                 dispatch({ type: "setChosen", payload: chosen })
             }}
-            drop="left"
+            drop="up"
         >
             <Dropdown.Toggle variant="success" id="dropdown-basic">
                 {state.chosen ? state.chosen.name : "Select a language"}

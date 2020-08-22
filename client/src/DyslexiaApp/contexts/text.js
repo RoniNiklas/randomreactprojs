@@ -34,7 +34,11 @@ const initialState = {
     
     - Tyger by William Blake
     `,
-    immersive: false
+    immersive: false,
+    recognition: new window.webkitSpeechRecognition(),
+    recording: false,
+    selectionStart: 0,
+    selectionEnd: 0
 }
 
 const TextContext = createContext(initialState)
@@ -43,13 +47,36 @@ const reducer = (state, action) => {
     console.log("CONTENT ACTION", action)
     switch (action.type) {
         case "setRef": {
-            return {...state, ref: action.payload}
+            return { ...state, ref: action.payload }
         }
         case "setText": {
-            return {...state, text: action.payload}
+            return { ...state, text: action.payload }
+        }
+        case "addText": {
+            const textArea = state.ref.current
+            if (textArea.selectionStart !== 0) {
+                console.log("SELECTION START IN REDUCER", textArea.selectionStart)
+                const start = Math.min(textArea.selectionStart, textArea.selectionEnd)
+                const end = Math.max(textArea.selectionStart, textArea.selectionEnd)
+                const text = textArea.value
+                const textStart = text.slice(0, start)
+                const textEnd = text.slice(end, textArea.value.length)
+                const result = textStart + action.payload + textEnd
+                const newSelectionIndex= textStart.length + action.payload.length
+                console.log("NEW SELECTION", newSelectionIndex)
+                return {...state, text: result}
+            }
+            return { ...state, text: state.text + action.payload }
         }
         case "setImmersive": {
-            return {...state, immersive: action.payload}
+            return { ...state, immersive: action.payload }
+        }
+        case "setLanguage": {
+            state.recognition.lang = action.payload
+            return { ...state }
+        }
+        case "setRecording": {
+            return { ...state, recording: action.payload }
         }
         default: throw new Error("Invalid action type in textcontext")
     }

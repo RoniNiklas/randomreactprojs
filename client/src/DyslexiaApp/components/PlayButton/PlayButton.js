@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import PlayArrow from "@material-ui/icons/PlayArrow";
 
 import { SpeechContext } from "../../contexts/speech"
 import { TextContext } from "../../contexts/text"
@@ -42,8 +43,8 @@ const PlayButton = () => {
     }
 
     return (
-        <button onClick={handlePlay}>
-            Play
+        <button className="icon-button" onClick={handlePlay}>
+            <PlayArrow />
         </button>
     )
 }

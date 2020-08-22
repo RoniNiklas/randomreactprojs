@@ -5,6 +5,6 @@
 18.3 => 4h => Timer improvements css + function  
   
 ## Dyslexia  
-23.5 => 4h => Toolbar, textarea
-24.5 => 4h/8h => screen reader + puolet toolbarista
-25.5 => 4h/12h => varjostuksen kanssa tappelua
+23.5 => 4h => SideBar, textarea
+24.5 => 4h/8h => screen reader + puolet SideBarista
+25.5 => 7h/15h => varjostuksen kanssa tappelua

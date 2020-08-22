@@ -1,0 +1,14 @@
+.dyslexia-sidebar {
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%;
+    width: 20vw;
+    flex: 1 0 0;
+    padding: 1rem 1rem;
+    border-left: black 1px solid;
+}
+.dyslexia-sidebar > h3 {
+    align-self: flex-start;
+}

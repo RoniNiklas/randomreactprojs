@@ -5,9 +5,6 @@ import { StyleContext } from "../../contexts/textStyle"
 
 const FontDropdown = () => {
     const { state, dispatch } = useContext(StyleContext)
-    const handleChange = (event, type) => {
-        dispatch({ type, payload: Number(event.target.value) })
-    }
     return (
         <Dropdown
             onSelect={(eventKey) => {

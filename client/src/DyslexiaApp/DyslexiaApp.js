@@ -1,6 +1,8 @@
 import React, { useContext } from "react"
-import ToolBar from "./components/ToolBar/ToolBar"
+import SideBar from "./components/SideBar/SideBar"
+import TopBar from "./components/TopBar/TopBar"
 import TextArea from "./components/TextArea/TextArea"
+import BottomBar from "./components/BottomBar/BottomBar"
 
 import { StyleContextProvider } from "./contexts/textStyle"
 import { TextContextProvider } from "./contexts/text"
@@ -14,8 +16,12 @@ const DyslexiaApp = () => {
             <TextContextProvider>
                 <SpeechContextProvider>
                     <div className="dyslexia-wrapper" >
-                        <TextArea />
-                        <ToolBar />
+                        <TopBar / >
+                        <div className="dyslexia-midarea">
+                            <TextArea />
+                            <SideBar />
+                        </div>
+                        <BottomBar />
                     </div>
                 </SpeechContextProvider>
             </TextContextProvider>

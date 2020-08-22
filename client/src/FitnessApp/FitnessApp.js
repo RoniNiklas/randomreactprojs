@@ -7,7 +7,7 @@ import WeightCalculator from "./Components/WeightCalculator/WeightCalculator"
 const FitnessApp = () => {
     return (
         <>
-            <Menu />
+            <Menu key={window.location.pathname}/>
             <Route exact path="/fitness/timer" render={() => <Timer />} />
             <Route exact path="/fitness/weight" render={() => <WeightCalculator />} />
         </>

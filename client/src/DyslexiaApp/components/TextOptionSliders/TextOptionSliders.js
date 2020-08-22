@@ -4,10 +4,12 @@ import Slider from "../Slider/Slider"
 import { StyleContext } from "../../contexts/textStyle"
 
 const Sliders = () => {
+    
     const { state, dispatch } = useContext(StyleContext)
     const handleChange = (event, type) => {
         dispatch({ type, payload: Number(event.target.value) })
     }
+
     return (
         <div>
             <Slider label={"Font: " + state.fontSize} min={10} max={60} step={1} value={state.fontSize} callback={(event) => handleChange(event, "fontSize")} />
