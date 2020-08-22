@@ -4,8 +4,8 @@ A compilation of small node + express + react projects.
 Includes:   
 - Wolt App - A restaurant lister and list sorter done as a part of the application process for Wolt's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/wolt).  
 - Eficode App -  A public transport route finding app that shows you between one and three ways of getting to the Eficode offices in Helsinki. Done as a part of the application process for Eficode's summer internship.  Available on [heroku](https://roninreactprojs.herokuapp.com/eficode).  
-- Fitness App - A compilation of helpful tools to help you in physical training. Currently includes a timer and a weight calculator. Done as a part of the university course 'Fullstack web sovellus harjoitustyö'. **WIP**    
-- Dyslexia App - An app that is basically a reader, where you can alter the text's font, spacing, colors etc. Also uses the Web Speech API and the Speech Synthesis API to enable speech-to-text and text-to-speech to make text-handling easier.
+- Fitness App - A compilation of helpful tools to help you in physical training. Currently includes a timer and a weight calculator. **WIP**      
+- Dyslexia App - An app that is basically a reader, where you can alter the text's font, spacing, colors etc. Also uses the Web Speech API and the Speech Synthesis API to enable speech-to-text and text-to-speech to make text-handling easier.   
 
 # How to use
 
